@@ -1,4 +1,5 @@
 import firebase from "./FirebaseConfig";
+import { getAuth } from "firebase/auth";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -8,7 +9,7 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 
-const auth = firebase.auth;
+const auth = getAuth(firebase);
 
 const registerUser = (email, password) => {
   return createUserWithEmailAndPassword(auth, email, password);
