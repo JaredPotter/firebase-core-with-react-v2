@@ -1,0 +1,32 @@
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      // Sanitization of Requests
+      function recipeHasOnlyAllowedFields() {
+        let requiredFields = ['name', 'category', 'directions', 'publishDate', 'unixTimeStampInMilliseconds', 'ingredients', 'isPublished'];
+        let keys = request.resource.data.keys();
+        return keys.toSet().hasAll(requiredFields) && keys.toSet().hasOnly(requiredFields);
+      }
+
+      function isRecipeValid() {
+        let data = request.resource.data;
+        return data.name is string && data.name != "" &&
+          data.category is string && data.category != "" &&
+          data.directions is string && data.directions != "" &&
+          data.ingredients is list && data.ingredients.size() > 0 &&
+          data.publishDate is string && data.publishDate != "" &&
+          data.unixTimeStampInMilliseconds is int &&
+          data.isPublished is bool;
+      }
+
+      allow read: if request.auth != null || (request.auth == null && resource.data.isPublished == true);
+
+      allow create, update: if request.auth != null && recipeHasOnlyAllowedFields() && isRecipeValid();
+      allow delete: if request.auth != null;
+    }
+  }
+}
+

@@ -1,0 +1,107 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "recipes",
+      "fields": [
+        {
+          "fieldPath": "category",
+          "mode": "ASCENDING"
+        },
+        {
+          "fieldPath": "unixTimeStampInMilliseconds",
+          "mode": "ASCENDING"
+        },
+        {
+          "fieldPath": "name",
+          "mode": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "recipes",
+      "fields": [
+        {
+          "fieldPath": "category",
+          "mode": "ASCENDING"
+        },
+        {
+          "fieldPath": "unixTimeStampInMilliseconds",
+          "mode": "ASCENDING"
+        },
+        {
+          "fieldPath": "name",
+          "mode": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "recipes",
+      "fields": [
+        {
+          "fieldPath": "isPublished",
+          "mode": "ASCENDING"
+        },
+        {
+          "fieldPath": "unixTimeStampInMilliseconds",
+          "mode": "DESCENDING"
+        },
+        {
+          "fieldPath": "name",
+          "mode": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "recipes",
+      "fields": [
+        {
+          "fieldPath": "category",
+          "mode": "ASCENDING"
+        },
+        {
+          "fieldPath": "unixTimeStampInMilliseconds",
+          "mode": "DESCENDING"
+        },
+        {
+          "fieldPath": "name",
+          "mode": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "recipes",
+      "fields": [
+        {
+          "fieldPath": "isPublished",
+          "mode": "ASCENDING"
+        },
+        {
+          "fieldPath": "unixTimeStampInMilliseconds",
+          "mode": "ASCENDING"
+        },
+        {
+          "fieldPath": "name",
+          "mode": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "recipes",
+      "fields": [
+        {
+          "fieldPath": "isPublished",
+          "mode": "ASCENDING"
+        },
+        {
+          "fieldPath": "unixTimeStampInMilliseconds",
+          "mode": "DESCENDING"
+        },
+        {
+          "fieldPath": "name",
+          "mode": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
